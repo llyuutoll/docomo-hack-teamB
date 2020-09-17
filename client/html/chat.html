@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-118308350-7");
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="./../css/lib/bootstrap.min.css">
+    <link rel="stylesheet" media="all" href="./../css/chat.css" />
+    <script
+      type="text/javascript"
+      src="./../js/lib/jquery-3.3.1.min.js"
+    ></script>
+    <script src="./../js/lib/bootstrap.min.js"></script>
+    <!--<script src="./../js/lib/iconify.mim.js"></script>-->
+  </head>
+
+  <body>
+    <div class="form-group" name="search">
+      <input class="form-control" type="text" placeholder="🔍Send Text" onkeypress="enter()">
+      <!--<span class="iconify" data-icon="ion-md-send" data-inline="false" onkeypress="enter()"></span>-->
+    </div>
+    <div id=main></div>
+
+    <script type="text/javascript" src="../js/chat.js"></script>
+  </body>
+</html>
