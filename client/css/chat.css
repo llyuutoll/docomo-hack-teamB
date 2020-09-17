@@ -1,0 +1,167 @@
+a:hover{
+  text-decoration: none;
+}
+
+.list{
+  /* text-decoration: underline; */
+  border-bottom: 1px solid blue;
+  padding-bottom: 0.5px;
+}
+
+.not-found{
+  padding:0
+}
+
+.description{
+  padding:0;
+}
+
+.sb-pos {
+  padding: 0;
+  list-style: none;
+  list-style-position: inside;
+}
+
+.note{
+  padding-top: 5px;
+}
+
+.sb-pos .line{
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+#main{
+  position: relative;
+}
+
+.form-group{
+  background-color: white;
+  width: 100vw;
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 5vw;
+  margin: auto;
+  font-size: 0;
+}
+
+.form-control{
+  display: inline-block;
+  width: 80vw;
+  border-radius: 10vw;
+  margin-left: 5vw;
+}
+
+.submit-area{
+  display: inline-block;
+  float: right;
+  width: 10vw;
+  margin-right: 5vw;
+}
+
+.btn-default{
+}
+
+.speech-bubble {
+  background: #ffffff;
+  text-align: left;
+  overflow: hidden;
+  padding-bottom: 10px;
+}
+
+.speech-bubble p {
+  text-align: left;
+  margin: 0;
+}
+
+.speech-bubble:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.speech-bubble:before {
+  content: "";
+  display: table;
+}
+
+.sb-bubble:after,
+.sb-bubble:before {
+  content: " ";
+  height: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 1.2em;
+  width: 0;
+}
+
+.sb-left {
+  float: left;
+  margin-left: 20px;
+}
+
+.sb-right {
+  float: right;
+  margin-right: 20px;
+}
+
+.sb-line {
+  border: solid 1px #c5d0e4;
+  border-radius: 1em;
+  max-width: 70%;
+  padding: .2em 1em;
+  position: relative;
+}
+
+.sb-line.sb-left {
+  background: #f9f9f9;
+}
+
+.sb-line.sb-left:after {
+  background: #ffffff;
+  border: solid #c5d0e4;
+  border-radius: 1.6em 0 0 1.6em;
+  border-width: 0 0 1px 1px;
+  height: 1.6em;
+  margin: -2.3em -1px 0 0;
+  right: 100%;
+  width: .8em;
+}
+
+.sb-line.sb-left:before {
+  background: #f9f9f9;
+  border: solid #c5d0e4;
+  border-radius: 1.6em 0 0 1.6em;
+  border-width: 0 0 1px 1px;
+  height: 1.6em;
+  margin: -1.8em -1px 0 0;
+  right: 100%;
+  width: .8em;
+}
+
+.sb-line.sb-right {
+  background: #84e248;
+}
+
+.sb-line.sb-right:after {
+  background: #ffffff;
+  border: solid #c5d0e4;
+  border-radius: 0 1.6em 1.6em 0;
+  border-width: 0 1px 1px 0;
+  height: 1.6em;
+  left: 100%;
+  margin: -2.3em 0 0 -1px;
+  width: .8em;
+}
+
+.sb-line.sb-right:before {
+  background: #84e248;
+  border: solid #c5d0e4;
+  border-radius: 0 1.6em 1.6em 0;
+  border-width: 0 1px 1px 0;
+  height: 1.6em;
+  left: 100%;
+  margin: -1.8em 0 0 -1px;
+  width: .8em;
+}
