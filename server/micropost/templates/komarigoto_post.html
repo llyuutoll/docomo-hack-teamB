@@ -65,10 +65,10 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link active" href="#">困りごとリスト<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="http://localhost:8000/komarigoto/komarigoto_list/">困りごとリスト</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost:8000/komarigoto/komarigoto_post/">困りごとの投稿</a>
+        <a class="nav-link active" href="http://localhost:8000/komarigoto/komarigoto_post/">困りごとの投稿<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">コミュニティーメーター</a>
@@ -83,38 +83,29 @@
   <h1>困りごと一覧</h1>
   </div>
   <div class="container">
-    {% for komarigoto in komarigoto_list %}
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header">
-            {{komarigoto.tag}}
-          </div>
-        <div class="card-body">
-          <div class="card-text">
-            <ul>
-            <li>名前: {{komarigoto.name}}</li>
-            <li>距離: {{komarigoto.distance}}</li>
-            <li>投稿日: {{komarigoto.year}}年 {{komarigoto.month}}月 {{komarigoto.day}}日</li>
-            <li>内容 : {{komarigoto.demand}}</li>
-            {% if komarigoto.status == 1 %}
-              <li>ステータス : 未解決</li>
-            {% elif komarigoto.status == 2 %}
-              <li>ステータス : 解決中</li>
-            {% elif komarigoto.status == 3 %}
-              <li>ステータス : 解決済み</li>
-            {% else %}
-              <li>ステータス :        </li>
-            {% endif %}
-            </ul>
-            <div class="text-right"><a class="btn btn-primary" href="#" role="button">解決</a></div>
-          </div>
-        </div>
-      </div>
+  <form action="http://localhost:8000/komarigoto/posted/" method="post" entype="multipart/form-data">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">名前</label>
+      <input class="form-control" id="exampleFormControlInput1" name="name" placeholder="山田太郎">
     </div>
-    <br>
-    <br>
-    {% endfor %}
-  </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">カテゴリ</label>
+      <select class="form-control" id="exampleFormControlSelect1" name="tag">
+        <option>買い物</option>
+        <option>引き取り</option>
+        <option>教えて！</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">依頼内容</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" name="demand" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">お礼のお金</label>
+      <input class="form-control" id="exampleFormControlInput1" name="price" placeholder="1000円">
+    </div>
+    <div class="text-right"><button type="submit" class="btn btn-primary">投稿</button></div>
+  </form>
 </div>
 </main>
 

@@ -1,14 +1,18 @@
 from django.shortcuts import render
 from rest_framework import viewsets, status
 from rest_framework.response import Response
+from rest_framework.authentication import BasicAuthentication
 from .models import Komarigoto
 from .serializer import KomarigotoSerializer
 from rest_framework.decorators import action
+from .auth import CsrfExemptSessionAuthentication
+from django.shortcuts import redirect
 
 
 class KomarigotoViewSet(viewsets.ModelViewSet):
     queryset = Komarigoto.objects.all()
     serializer_class = KomarigotoSerializer
+    authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
 
     @action(detail=False, methods=["post"])
     def register(self, request):
@@ -20,13 +24,14 @@ class KomarigotoViewSet(viewsets.ModelViewSet):
         komarigoto.distance = request.POST['distance']
         komarigoto.price = request.POST['price']
         komarigoto.status = request.POST['status']
+        komarigoto.save()
 
         serializer = self.get_serializer(komarigoto)
         return render(request, 'komarigoto_list.html')
 
     @action(detail=False, methods=["post"])
-    def demand_post(self, request):
-        komarigogo = Komarigoto()
+    def posted(self, request):
+        komarigoto = Komarigoto()
 
         komarigoto.name = request.POST['name']
         komarigoto.tag = request.POST['tag']
@@ -34,9 +39,10 @@ class KomarigotoViewSet(viewsets.ModelViewSet):
         komarigoto.distance = 1000
         komarigoto.price = request.POST['price']
         komarigoto.status = 1
+        komarigoto.save()
 
         serializer = self.get_serializer(komarigoto)
-        return render(request, 'komarigoto_list.html')
+        return redirect('http://localhost:8000/komarigoto/komarigoto_list')
 
     @action(detail=False, methods=["post"])
     def chat(self, request):
@@ -66,6 +72,10 @@ class KomarigotoViewSet(viewsets.ModelViewSet):
         context = {'komarigoto_list':komarigotos}
         return render(request, 'komarigoto_list.html', context)
 
+    @action(detail=False, methods=["get"])
+    def komarigoto_post(self, request):
+        komarigotos = Komarigoto.objects.all()
+        return render(request, 'komarigoto_post.html')
 
 
 '''
