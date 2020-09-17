@@ -1,7 +1,7 @@
 var getUrl = '';
 var res;
 //let test = [["",""],[""]]
-
+/*
 function dispLoading(msg) {
   //引数なし（メッセージなし）を許容
   if (msg == undefined) {
@@ -30,7 +30,7 @@ $(function() {
     .done(response => {
       console.log(response.notifications);
       res = response.notifications;
-      for (var i = 0; i < res.length; i++) {
+      for (var i = 0; i < res.Some quick example text to build on the card title and make up the bulk of the card's content.length; i++) {
         var date = new Date(res[i].released_at);
         var month = date.getMonth();
         if (month == 0) {
@@ -96,4 +96,15 @@ $(function() {
     .always(function() {
       removeLoading();
     });
+});
+*/
+
+$(function() {
+  $('.btn btn-success center-block').click(function(e) {
+    $(".btn btn-success center-block").text("解決済み");
+  });
+});
+
+$('#solve').on('click', function() {
+  $("#solve").text("解決済み");
 });
