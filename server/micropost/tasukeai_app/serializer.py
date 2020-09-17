@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Customer
+from .models import Komarigoto
 
-class CustomerSerializer(serializers.ModelSerializer):
+class KomarigotoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Customer
+        model = Komarigoto
         fields = ('name',)

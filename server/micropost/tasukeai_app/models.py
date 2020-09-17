@@ -1,11 +1,8 @@
 from django.db import models
 import numpy as np
-from django.contrib.auth.models import User
-
 # Create your models here.
 
 class Komarigoto(models.Model):
-    komarigoto_id = models.CharField(max_length=32)
     name = models.CharField(max_length = 128)
     tag = models.CharField(max_length=128)
     demand = models.CharField(max_length = 1024)
@@ -17,4 +14,4 @@ class Komarigoto(models.Model):
     pub_day = models.CharField(max_length = 32)
 
     def __str__(self):
-        return self.name
+        return str(self.id)

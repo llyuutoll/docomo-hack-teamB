@@ -60,6 +60,11 @@ class KomarigotoViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(komarigoto)
         return render(request, 'chat.html')
 
+    @action(detail=False, methods=["get"])
+    def komarigoto_list(self, request):
+        komarigotos = Komarigoto.objects.all()
+        context = {'komarigoto_list':komarigotos}
+        return render(request, 'komarigoto_list.html', context)
 
 
 
