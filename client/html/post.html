@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--2019/05/23 17:53-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Complete Bootstrap 4 Website Layout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg- sticky-top" style="background-color:#ffa48b;>
+	<div class="container-fluid">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">ホーム</a>
+                </li　>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">依頼要項</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">掲示板</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">町レベル</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">お問い合わせ</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!--- Image Slider -->
+<div id="slides" class="carousel slide" data-ride="carousel">
+	<ul class="carousel-indicators">
+		<li data-target="#slides" data-slide-to="0" class="active"></li>
+
+	</ul>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img src="../img/kk.jpeg" class="img-fluid" alt="Responsive image">
+			<div class="carousel-caption">
+				<h1 class="display-7" style="color:black">こんなこと助けて!</h1>
+				<h3 style="color:black">What to help？</h3>
+
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">名前</label>
+      <div class="col-sm-12">
+        <input class="form-control" type="text">
+      </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">困りごと</label>
+        <div class="col-sm-12">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">カテゴリ</label>
+        <div class="col-sm-12">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">お礼</label>
+        <div class="col-sm-12">
+          <input class="form-control" type="text">
+        </div>
+      </div>
+    
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <a href="#" class="btn btn-outline-secondary" >投稿</a>
+      </div>
+    </div>
+  </form>
+</body>
+</html>
