@@ -1,0 +1,100 @@
+.syokusyu_main{
+    width: 1440px;
+    height: 2000px;
+}
+
+.page_title{
+  position: absolute;
+  width: 869px;
+  height: 92.11px;
+  left: 91px;
+  top: 99px;
+
+}
+
+.it_box{
+  position: absolute;
+  width: 380px;
+  height: 223px;
+  left: 105px;
+  top: 249px;
+
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.itbox > .border{
+  position: absolute;
+  width: 348px;
+  height: 0px;
+  left: 117px;
+  top: 291px;
+
+  border: 1px solid #000000;
+  transform: rotate(0.16deg);
+}
+
+.it_box > .it_title{
+  position: absolute;
+  width: 380px;
+  height: 223px;
+  left: 105px;
+  top: 249px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 31px;
+  line-height: 36px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.it_box > .it_content{
+  position: absolute;
+  width: 264px;
+  height: 134px;
+  left: 163px;
+  top: 307px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+
+  color: #000000;
+}
+
+.apply_button{
+  /* apply_button */
+  position: absolute;
+  width: 360px;
+  height: 30px;
+  left: 115px;
+  top: 495px;
+
+  background: #3154D0;
+}
+
+.apply_button > .apply_text {
+  position: absolute;
+  width: 290px;
+  height: 26px;
+  left: 150px;
+  top: 498px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #FFFFFF;
+}

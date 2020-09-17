@@ -4,10 +4,13 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-class Customer(models.Model):
+class Komarigoto(models.Model):
+    komarigoto_id = models.CharField(max_length=32)
     name = models.CharField(max_length = 128)
-    demand = models.CharField(max_length = 128)
+    tag = models.CharField(max_length=128)
+    demand = models.CharField(max_length = 1024)
     distance = models.CharField(max_length = 32)
+    price = models.CharField(max_length=32)
     status = models.CharField(max_length = 32)
     pub_year = models.CharField(max_length = 32)
     pub_month = models.CharField(max_length = 32)

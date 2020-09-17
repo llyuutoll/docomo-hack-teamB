@@ -1,0 +1,115 @@
+{% load static from staticfiles%}
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="personal webpage of Tomoya Tanaka">
+    <meta name="author" content="Tomoya Tanaka">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>IBM Online Internship</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'bootstrap/4.4/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/feedback_send.css" rel="stylesheet">
+
+
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+
+    <!--Bootstrap core JS-->
+    <script src="bootstrap/4.4/dist/js/bootstrap.min.js"></script>
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/2eb344279d.js" crossorigin="anonymous"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/feedback_send.css' %}" rel="stylesheet">
+
+  </head>
+
+
+  <body class="d-flex flex-column h-100">
+    <header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark base_color">
+    <a class="navbar-brand" href="index.html">IBM 社内システム</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="https://smile-onlinejob-candidate-manager.au-syd.cf.appdomain.cloud/candidate/candidate_list/">キャリアビジョン提出者一覧</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://smile-onlinejob-candidate-manager.au-syd.cf.appdomain.cloud/candidate/output_list/">アウトプット提出者一覧</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="https://smile-onlinejob-candidate-manager.au-syd.cf.appdomain.cloud/candidate/feedback/ ">フィードバック入力<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    </div>
+  </nav>
+
+</header>
+
+<!-- Begin page content -->
+<main role="main" class="fb_main">
+  <div class="fb_main_box">
+    <div class="fb_student_name">
+      <div class="student_name_box">
+        <h4>名前:〇〇さん</h4>
+      </div>
+    </div>
+    <div class="feedback_box">
+      <div class="student_box">
+        <div class="student_solution_image">
+          <h4>●●さんのソリューション</h4>
+          <img src="https://smile-onlinejob-candidate-manager.au-syd.cf.appdomain.cloud/media/output/sample.png" width="900px"  alt="イラスト1">
+        </div>
+        <br><br>
+        <div class="student_title">
+          <h4>ソリューションのまとめ</h4>
+        </div>
+        <div class="student_solution_sumary_box">
+          <div class="student_solution_sumary_box_detail">
+          </div>
+        </div>
+      </div>
+      <div class="feedback_hr_text_box">
+        <h4>フィードバック</h4>
+        <textarea name="t_name2" cols="40" rows="35"></textarea>
+        <div class="right">
+          <input value="送信" type="submit" class="btn btn-primary button"></input>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer class="footer">
+ <div class="wrapper">
+   <div class="footer-col-wrapper">
+   <div class="footer-col  social-col">
+       <a href="https://www.facebook.com/IBMJapan/"> <span><i class="fa fa-facebook fa-2x"></i> </a></span>
+       <a href="https://twitter.com/IBM_JAPAN"><span><i class="fa fa-twitter fa-2x"></i> </a></span>
+       <a href="https://www.linkedin.com/company/ibm/?originalSubdomain=jp"><span><i class="fa fa-linkedin fa-2x"></i> </a></span>
+   </div>
+   <div class="footer-col  copyright-col">
+     <p>&copy; 2020 スマイル🐍</p>
+   </div>
+ </div>
+</div>
+</footer>
+
+</body>
+</html>

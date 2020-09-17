@@ -1,0 +1,59 @@
+.fb_main{
+    width: 1440px;
+    height: 2700px;
+  }
+  
+.fb_main > .fb_main_box{
+  width: 90%;
+  margin: 50px auto;
+}
+  
+.fb_main_box > .fb_student_name{
+  font-size: 24px;
+  line-height: 29px;
+  height: 65px;
+}
+
+.fb_main_box > .feedback_box{
+  width: 100%;
+  display: flex;
+}
+.feedback_box > .student_box{
+  width: 68%;
+  margin-right: 50px;
+}
+
+.feedback_box > .feedback_hr_text_box{
+  width: 27%;
+}
+.student_box > .feedback_hr_text_box{
+  width: 30%;
+}
+
+.student_box  > .student_solution_sumary_box{
+  width: 100%;
+  height: 250px;
+  
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.25));
+    
+  }
+  
+  .student_solution_sumary_box  > .student_solution_sumary_box_detail{
+    width: 90%;
+    height: 210px;
+    margin: 20px 20px;
+    background: #FFFFFF;
+    font-size: 20px;
+    line-height: 25px;
+  }
+  
+  .right{
+    width: 100%;
+  }
+
+  .button{
+    width: 100%;
+  }

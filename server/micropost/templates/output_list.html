@@ -1,0 +1,131 @@
+{% load static from staticfiles%}
+
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="personal webpage of Tomoya Tanaka">
+    <meta name="author" content="Tomoya Tanaka">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>IBM 社内システム</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'bootstrap/4.4/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+
+    <!--Bootstrap core JS-->
+    <script src="{% static 'bootstrap/4.4/dist/js/bootstrap.min.js' %}"></script>
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/2eb344279d.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <script>
+       $(document).on('change', ':file', function() {
+           var input = $(this),
+           numFiles = input.get(0).files ? input.get(0).files.length : 1,
+           label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+           input.parent().parent().next(':text').val(label);
+
+           var files = !!this.files ? this.files : [];
+           if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+           if (/^image/.test( files[0].type)){ // only image file
+               var reader = new FileReader(); // instance of the FileReader
+               reader.readAsDataURL(files[0]); // read the local file
+               reader.onloadend = function(){ // set image data as background of div
+                   input.parent().parent().parent().prev('.imagePreview').css("background-image", "url("+this.result+")");
+               }
+           }
+       });
+       </script>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  </head>
+
+
+  <body class="d-flex flex-column h-100">
+    <header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark base_color">
+    <a class="navbar-brand" href="index.html">IBM社内システム</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="https://smile-onlinejob-candidate-manager.au-syd.cf.appdomain.cloud/candidate/candidate_list/">キャリアビジョン提出者一覧</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="https://smile-onlinejob-candidate-manager.au-syd.cf.appdomain.cloud/candidate/output_list/">アウトプット提出者一覧<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://smile-onlinejob-candidate-manager.au-syd.cf.appdomain.cloud/candidate/feedback/ ">フィードバック入力</a>
+            </li>
+          </ul>
+    </div>
+  </nav>
+</header>
+
+<main role="main" class="basic_info_main">
+  <div class="container">
+  <h1>アウトプット提出者一覧</h1>
+  </div>
+  {% for candidate in candidate_list %}
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            {{candidate.name}}
+          </div>
+        <div class="card-body">
+          <div class="card-text">
+            <ul>
+            <li>郵便番号: {{candidate.address_number}}</li>
+            <li>住所: {{candidate.address}}</li>
+            <li>生年月日: {{candidate.year}}年 {{candidate.month}}月 {{candidate.day}}日</li>
+            <li>卒業年月日 : {{candidate.graduate_date}}</li>
+            <li>大学: {{candidate.univ}}</li>
+            <li>学部: {{candidate.department}}</li>
+            <li>学科: {{candidate.course}}</li>
+            <li>卒業年月日 : {{candidate.enroll_date}}</li>
+            <li>卒業年月日 : {{candidate.graduate_date}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-header">
+          <center><strong>ソリューションの要約</strong></center>
+        </div>
+      <div class="card-body">
+        <div class="card-text">
+          {{candidate.summary}}
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="text-right"><button type="button" class="btn btn-primary">フィードバックを送信</button></div>
+    </div>
+    <div class="col-md-8 text-center profile-img"><img src=https://smile-onlinejob-candidate-manager.au-syd.cf.appdomain.cloud/media/output/sample.png alt="profile" width="600"></div>
+  </div>
+  </div>
+  {% endfor %}
+</div>
+</main>
+
+</body>
+</html>

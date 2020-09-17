@@ -1,0 +1,78 @@
+{% load static %}
+
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="personal webpage of Tomoya Tanaka">
+    <meta name="author" content="Tomoya Tanaka">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>IBM</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'bootstrap/4.4/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!--JQuery-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"></script>
+
+    <!--Bootstrap core JS-->
+    <script src="{% static 'bootstrap/4.4/dist/js/bootstrap.min.js' %}"></script>
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/2eb344279d.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <script>
+       $(document).on('change', ':file', function() {
+           var input = $(this),
+           numFiles = input.get(0).files ? input.get(0).files.length : 1,
+           label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+           input.parent().parent().next(':text').val(label);
+
+           var files = !!this.files ? this.files : [];
+           if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+           if (/^image/.test( files[0].type)){ // only image file
+               var reader = new FileReader(); // instance of the FileReader
+               reader.readAsDataURL(files[0]); // read the local file
+               reader.onloadend = function(){ // set image data as background of div
+                   input.parent().parent().parent().prev('.imagePreview').css("background-image", "url("+this.result+")");
+               }
+           }
+       });
+       </script>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  </head>
+
+
+  <body class="d-flex flex-column h-100">
+    <header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark base_color">
+    <a class="navbar-brand" href="index.html">IBM</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+    </div>
+  </nav>
+</header>
+
+<main role="main" class="basic_info_main">
+  <div class="container">
+    <h3>キャリアビジョンを提出していただいてありがとうございました！</h3>
+    <h3>キャリアビジョンを拝見した上で、後日メールにて職種を提案させていただきます</h3>
+  </div>
+</main>
+
+</body>
+</html>

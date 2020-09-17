@@ -1,55 +1,91 @@
 from django.shortcuts import render
 from rest_framework import viewsets, status
 from rest_framework.response import Response
-from .models import Customer
-from .serializer import CustomerSerializer
+from .models import Komarigoto
+from .serializer import KomarigotoSerializer
 from rest_framework.decorators import action
 
 
-class CustomerViewSet(viewsets.ModelViewSet):
-    queryset = Customer.objects.all()
-    serializer_class = CustomerSerializer
+class KomarigotoViewSet(viewsets.ModelViewSet):
+    queryset = Komarigoto.objects.all()
+    serializer_class = KomarigotoSerializer
 
     @action(detail=False, methods=["post"])
     def register(self, request):
-        cusotmer = Customer()
+        komarigogo = Komarigoto()
 
-        customer.id = request.POST['id']
-        customer.name = request.POST['name']
-        customer.demand = request.POST['demand']
-        customer.distance = request.POST['distance']
-        customer.status = request.POST['status']
-        customer.pub_year = request.POST['pub_year']
-        customer.pub_month = request.POST['pub_month']
-        customer.pub_day = request.POST['pub_day']
-        customer.save()
+        komarigoto.name = request.POST['name']
+        komarigoto.tag = request.POST['tag']
+        komarigoto.demand = request.POST['demand']
+        komarigoto.distance = request.POST['distance']
+        komarigoto.price = request.POST['price']
+        komarigoto.status = request.POST['status']
 
-        serializer = self.get_serializer(customer)
-        return render(request, 'thankyou.html')
+        serializer = self.get_serializer(komarigoto)
+        return render(request, 'komarigoto_list.html')
+
+    @action(detail=False, methods=["post"])
+    def demand_post(self, request):
+        komarigogo = Komarigoto()
+
+        komarigoto.name = request.POST['name']
+        komarigoto.tag = request.POST['tag']
+        komarigoto.demand = request.POST['demand']
+        komarigoto.distance = 1000
+        komarigoto.price = request.POST['price']
+        komarigoto.status = 1
+
+        serializer = self.get_serializer(komarigoto)
+        return render(request, 'komarigoto_list.html')
+
+    @action(detail=False, methods=["post"])
+    def chat(self, request):
+        komarigoto_id = request.GET['komarigoto_id']
+        komarigoto = Komarigoto.objects.get(id=komarigoto_id)
+
+        komarigoto.status = 2
+        komarigoto.save()
+
+        serializer = self.get_serializer(komarigoto)
+        return render(request, 'chat.html')
+
+    @action(detail=False, methods=["post"])
+    def solved(self, request):
+        komarigoto_id = request.GET['komarigoto_id']
+        komarigoto = Komarigoto.objects.get(id=komarigoto_id)
+
+        komarigoto.status = 3
+        komarigoto.save()
+
+        serializer = self.get_serializer(komarigoto)
+        return render(request, 'chat.html')
+
+
+
 
 '''
     @action(detail=False, methods=["post"])
     def output(self, request):
-        customer_id = request.POST['customer_id']
-        customer = customer.objects.get(customer_id=customer_id)
+        komarigoto_id = request.POST['komarigoto_id']
+        komarigoto = komarigoto.objects.get(komarigoto_id=komarigoto_id)
 
-        customer.output = request.POST["output"]
-        customer.summary = request.POST["summary"]
-        customer.save()
+        komarigoto.output = request.POST["output"]
+        komarigoto.summary = request.POST["summary"]
+        komarigoto.save()
 
-        serializer = self.get_serializer(customer)
+        serializer = self.get_serializer(komarigoto)
         return render(request, 'thankyou_output.html')
 
     @action(detail=False, methods=["get"])
-    def customer_list(self, request):
-        customers = customer.objects.all()
-        context = {'customer_list':customers}
-        return render(request, 'customer_list.html', context)
+    def komarigoto_list(self, request):
+        komarigotos = komarigoto.objects.all()
+        context = {'komarigoto_list':komarigotos}
+        return render(request, 'komarigoto_list.html', context)
 
     @action(detail=False, methods=["get"])
     def output_list(self, request):
-        customers = customer.objects.all()
-        context = {'customer_list':customers}
+        komarigotos = komarigoto.objects.all()
+        context = {'komarigoto_list':komarigotos}
         return render(request, 'output_list.html', context)
 
     @action(detail=False, methods=["get"])

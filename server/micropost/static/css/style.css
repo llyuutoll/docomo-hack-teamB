@@ -1,0 +1,93 @@
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+main > .container {
+  padding: 60px 15px 0px 15px;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.bg-custom {
+    background-color: #0066FF;
+}
+
+.profile-img {
+	float: left;
+	padding: 0px 0px 30px 0px;
+}
+
+.slide-img {
+  padding: 10px 10px 10px 10px;
+  width:100%;
+  max-width: 100%;
+  height: auto;
+
+}
+
+/** Site footer */
+.wrapper {
+  max-width: -webkit-calc(800px - (30px * 2));
+  max-width: calc(800px - (30px * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.footer {
+  border-top: 4px
+  solid #007bff;
+  margin-top: 100px;
+  padding: 60px 0px 20px 0px;
+  background-color: #6c757d;
+}
+
+.footer-col-wrapper {
+  font-size: 12px;
+  color: white;
+  margin-left: -15px;
+}
+
+.footer-col {
+  float: left;
+  margin-bottom: 15px;
+  padding-left: 15px;
+}
+
+.social-col {
+  width: -webkit-calc(100% - (30px / 2));
+  width: calc(100% - (30px / 2));
+  text-align: center;
+}
+
+.social-col .fa {
+  margin-left: 10px;
+  color: white;
+}
+
+.social-col .fa:hover {
+  color: #96F5FF;
+}
+
+.copyright-col {
+  width: -webkit-calc(100% - (30px / 2));
+  width: calc(100% - (30px / 2));
+  text-align: center;
+  color: white;
+}
+
+.base_color{
+  background-color: #054ADA;
+}
