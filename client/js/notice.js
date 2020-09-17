@@ -99,7 +99,18 @@ $(function() {
 });
 */
 
+<<<<<<< HEAD
 $('#solve').on('click', function() {
   $("this").text("解決済み");
   alert(1)
+=======
+$(function() {
+  $('.btn btn-success center-block').click(function(e) {
+    $(".btn btn-success center-block").text("解決済み");
+  });
+});
+
+$('#solve').on('click', function() {
+  $("#solve").text("解決済み");
+>>>>>>> 3b9c1cbcf30c4fee8fa90cf60884c7a5a47c3650
 });
